@@ -1,6 +1,5 @@
 package schaakbord;
-
-import java.awt.*;
+import java.awt.Color;
 import javax.swing.*;
 
 public class TextView extends JPanel{
