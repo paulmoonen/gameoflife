@@ -12,7 +12,8 @@ public class SchaakbordView extends JPanel{
     //constructor
     public SchaakbordView(SchaakbordData bd, int bg){
         bordData = bd;          
-        bordgrootte = bg;        
+        bordgrootte = bg;     
+        
     }     
 
     /**
@@ -28,11 +29,7 @@ public class SchaakbordView extends JPanel{
         stepX = schermBreedte / bordgrootte;
         stepY = schermHoogte / bordgrootte;
         Color fillColor;
-
-        //klikbaar maken
-        ActionListener klikHandler = new KlikHandler(); //inwendige klasse verderop        
-        System.out.println("vanuit paintComponent() van klasse SchaakbordView breedte: " + schermBreedte + ", hoogte: " + schermHoogte);
-
+         
         for( int row = 0; row < bordgrootte; row++){
             for( int col = 0; col < bordgrootte; col++){
                 cellAlive = bordData.schaakbord[row][col];
@@ -42,12 +39,6 @@ public class SchaakbordView extends JPanel{
                 g.fillRect((int)(row * stepX), (int)(col * stepY), stepX, stepY);
             }
         }
-    }
-
-    class KlikHandler implements ActionListener{
-        public void actionPerformed(ActionEvent e){
-
-        }
-
-    }
+    }  
+      
 }
