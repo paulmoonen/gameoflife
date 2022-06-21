@@ -11,7 +11,7 @@ public class Schaakbord {
         JFrame myFrame = new JFrame();
         SchaakbordData bordData = new SchaakbordData(schaakbordGrootte);
         SchaakbordView schaakbordview = new SchaakbordView( bordData, schaakbordGrootte );
-        ButtonView btnvw = new ButtonView();
+        ButtonView btnvw = new ButtonView(bordData, schaakbordview);
         TextView tvw = new TextView();
         ApplicationView appview = new ApplicationView(tvw, schaakbordview, btnvw);
         
