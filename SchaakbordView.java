@@ -12,8 +12,8 @@ public class SchaakbordView extends JPanel{
     public SchaakbordView(SchaakbordData bd, int bg){
         bordData = bd;          
         bordgrootte = bg;     
-        schermBreedte = 400;
-        schermHoogte = 400;
+        schermBreedte = 600;
+        schermHoogte = 600;
         
     }     
 

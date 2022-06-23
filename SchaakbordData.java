@@ -66,6 +66,24 @@ package schaakbord;
         }
     }
 
+    /**
+     * seed table with random noise
+     */
+    public void seedRandom(){
+        double treshold = 0.2;
+        
+        for(int i = 0; i < bordgrootte; i++){            
+            for(int j = 0; j < bordgrootte; j++){
+                double randomDouble =  Math.random();
+                boolean randomBoolean = (randomDouble < treshold);
+                schaakbord[i][j] = randomBoolean;                
+            }
+        }
+
+    }
+
+
+
     
 
 

@@ -1,10 +1,6 @@
 package schaakbord;
 import java.awt.*;
-//import java.awt.event.*;
 import javax.swing.*;
-//import javax.swing.event.MouseInputListener;
-
-//import org.w3c.dom.events.MouseEvent;
 
 /*
  * holds the different visible parts of the application nicely arranged

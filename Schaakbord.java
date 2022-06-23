@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Schaakbord {
     public static void main(String args[]){
 
-        final int schaakbordGrootte = 20;
+        final int schaakbordGrootte = 30;
 
         //maak een omvattend JFrame
         JFrame myFrame = new JFrame();
@@ -46,7 +46,7 @@ public class Schaakbord {
             }
         });                  
         
-        myFrame.setSize(450, 500);
+        myFrame.setSize(650, 700);
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.setTitle("Schaakbord");
         myFrame.setContentPane( appview );
