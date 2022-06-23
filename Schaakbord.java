@@ -1,8 +1,6 @@
 package schaakbord;
 import java.awt.event.*;
-//import java.awt.MouseInfo.*;
 import javax.swing.*;
-import javax.swing.event.MouseInputListener;
 
 public class Schaakbord {
     public static void main(String args[]){
@@ -32,7 +30,9 @@ public class Schaakbord {
 
             @Override
             public void mouseEntered(MouseEvent e){
-                System.out.println("mouse entered");
+                int x = e.getX();
+                int y = e.getY();
+                System.out.println("mouse entered, location ( "+ x + " , " + y + ")");
             }
 
             @Override
@@ -46,14 +46,12 @@ public class Schaakbord {
             }
         });                  
         
-        myFrame.setSize(400, 400);
+        myFrame.setSize(450, 500);
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.setTitle("Schaakbord");
         myFrame.setContentPane( appview );
         myFrame.setVisible(true);            
         
-        //bordData.allCellsWhite();
-        //bordData.invertLives();
         schaakbordview.repaint();           
         
     }    
