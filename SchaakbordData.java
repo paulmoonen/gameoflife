@@ -1,5 +1,7 @@
 package schaakbord;
 
+import java.nio.channels.AcceptPendingException;
+
 /*
  * klasse om de gegevens van het schaakbord op te slaan en bij te werken
  */
@@ -79,6 +81,15 @@ package schaakbord;
                 schaakbord[i][j] = randomBoolean;                
             }
         }
+
+    }
+    
+    /**
+     * toggle value of an individual cell
+     */
+    public void toggleCell(int x, int y){
+
+        schaakbord[x][y] = !schaakbord[x][y];
 
     }
 

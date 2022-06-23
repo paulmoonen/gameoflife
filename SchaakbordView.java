@@ -4,17 +4,16 @@ import javax.swing.*;
 
 public class SchaakbordView extends JPanel{
 
-    int schermBreedte, schermHoogte, stepX, stepY, bordgrootte;
+    int stepX, stepY, bordgrootte;
+    int schermHoogte = 600;
+    int schermBreedte = 600;
     private SchaakbordData bordData; //beschik over de te tonen gegevens
     boolean cellAlive; //temporarily hold value
         
     //constructor
     public SchaakbordView(SchaakbordData bd, int bg){
         bordData = bd;          
-        bordgrootte = bg;     
-        schermBreedte = 600;
-        schermHoogte = 600;
-        
+        bordgrootte = bg;                     
     }     
 
     /**
