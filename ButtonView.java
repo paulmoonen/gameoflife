@@ -4,8 +4,11 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class ButtonView extends JPanel{
-    private String tekst = "Invert colors";
-    private JButton button;
+    private String invertColorTekst = "Invert colors";
+    private String fillRandomTekst = "fill randomly";
+    private String allCellsWhiteTekst = "all cells white";
+    private String nextGenerationTekst = "next generation";
+    private JButton invertColorButton, fillRandomButton, allWhiteButton, nextGeneratioButton;
     private SchaakbordData borddata;
     private SchaakbordView schaakbordview;
 
@@ -13,19 +16,47 @@ public class ButtonView extends JPanel{
         this.borddata = borddata;
         this.schaakbordview = schaakbordview;
         setBackground(Color.YELLOW);
-        button = new JButton(tekst);
-        add(button);
+        invertColorButton = new JButton(invertColorTekst);
+        fillRandomButton = new JButton(fillRandomTekst);
+        allWhiteButton = new JButton(allCellsWhiteTekst);
+        nextGeneratioButton = new JButton(nextGenerationTekst);
 
-        ActionListener handler = new Handler();
-        button.addActionListener(handler);
+        add(invertColorButton);
+        add(fillRandomButton);
+        add(allWhiteButton);
+        add(nextGeneratioButton);
+
+        ActionListener eventhandler = new EventHandler();
+        invertColorButton.addActionListener(eventhandler);
+        fillRandomButton.addActionListener(eventhandler);
+        allWhiteButton.addActionListener(eventhandler);
+        nextGeneratioButton.addActionListener(eventhandler);
+        
     }
 
-    class Handler implements ActionListener{
+    /**
+     * een event handler die onderscheid maakt naar herkomst van het event
+     */
+    class EventHandler implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            
-            borddata.invertLives();
+            if(e.getSource() == invertColorButton){
+                borddata.invertLives();
+            }
+
+            if(e.getSource() == fillRandomButton){
+                borddata.seedRandom();
+            }
+
+            if(e.getSource() == allWhiteButton){
+                borddata.allCellsWhite();
+            }
+
+            if(e.getSource() == nextGeneratioButton){
+                borddata.nextGeneration();
+            }
+                        
             schaakbordview.repaint();
         }
-    }
+    }   
     
 }
