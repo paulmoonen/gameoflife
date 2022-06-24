@@ -14,10 +14,8 @@ public class ApplicationView extends JPanel {
     public ApplicationView(TextView tv, ChessboardView sbv, ButtonsView btnvw){
                                 
         setLayout(new BorderLayout());
-        add(tv, BorderLayout.NORTH);
-        add(sbv, BorderLayout.CENTER);
-        add(btnvw, BorderLayout.SOUTH);
-    }   
-
-      
+        add(tv,     BorderLayout.NORTH);
+        add(sbv,    BorderLayout.CENTER);
+        add(btnvw,  BorderLayout.SOUTH);
+    }         
 }

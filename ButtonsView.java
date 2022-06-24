@@ -3,23 +3,26 @@ import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
 
+/*
+ * control buttons, with event listener to call appropriate functions
+ */
 public class ButtonsView extends JPanel{
-    private String invertColorTekst = "Invert colors";
-    private String fillRandomTekst = "fill randomly";
-    private String allCellsWhiteTekst = "all cells white";
-    private String nextGenerationTekst = "next generation";
+    private String invertColorText     = "Invert colors";
+    private String fillRandomText      = "Fill randomly";
+    private String allCellsWhiteText   = "All cells white";
+    private String nextGenerationText  = "Next generation";
     private JButton invertColorButton, fillRandomButton, allWhiteButton, nextGeneratioButton;
-    private ChessboardData borddata;
-    private ChessboardView schaakbordview;
+    private ChessboardData boarddata;
+    private ChessboardView chessboardview;
 
-    public ButtonsView(ChessboardData borddata, ChessboardView schaakbordview){
-        this.borddata = borddata;
-        this.schaakbordview = schaakbordview;
+    public ButtonsView(ChessboardData boarddata, ChessboardView chessboardview){
+        this.boarddata = boarddata;
+        this.chessboardview = chessboardview;
         setBackground(Color.YELLOW);
-        invertColorButton = new JButton(invertColorTekst);
-        fillRandomButton = new JButton(fillRandomTekst);
-        allWhiteButton = new JButton(allCellsWhiteTekst);
-        nextGeneratioButton = new JButton(nextGenerationTekst);
+        invertColorButton   = new JButton(invertColorText);
+        fillRandomButton    = new JButton(fillRandomText);
+        allWhiteButton      = new JButton(allCellsWhiteText);
+        nextGeneratioButton = new JButton(nextGenerationText);
 
         add(invertColorButton);
         add(fillRandomButton);
@@ -35,28 +38,27 @@ public class ButtonsView extends JPanel{
     }
 
     /**
-     * een event handler die onderscheid maakt naar herkomst van het event
+     * one event handler, distinguishes by event origin
      */
     class EventHandler implements ActionListener{
         public void actionPerformed(ActionEvent e){
             if(e.getSource() == invertColorButton){
-                borddata.invertLives();
+                boarddata.invertLives();
             }
 
             if(e.getSource() == fillRandomButton){
-                borddata.seedRandom();
+                boarddata.seedRandom();
             }
 
             if(e.getSource() == allWhiteButton){
-                borddata.allCellsWhite();
+                boarddata.allCellsWhite();
             }
 
             if(e.getSource() == nextGeneratioButton){
-                borddata.nextGeneration();
+                boarddata.nextGeneration();
             }
 
-            schaakbordview.repaint();
+            chessboardview.repaint();
         }
-    }   
-    
+    }       
 }

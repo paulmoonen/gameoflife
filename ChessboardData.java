@@ -1,48 +1,47 @@
 package gameoflife;
 
 /*
- * klasse om de gegevens van het schaakbord op te slaan en bij te werken
+ * class to hold and recalculate cell data
  */
 
  class ChessboardData{
     
-    private int bordgrootte;                    //number of squares along either side of chessboard
-    public boolean [][] schaakbord;             //lijst van cellen, tweedimensionale boolean array 
-    private boolean [][] rekenbord;             //voor berekening nieuwe waarden
+    private int squaresAlongSide;               //number of squares along either side of chessboard
+    public boolean [][] chessboard;             //list of cells, two dimensional boolean array 
+    private boolean [][] calculationboard;      //temporarily hold all new values
     private int iLess, iMore, jLess, jMore;     //variables to get neighbour cell coordinates
     private byte livingNeighbours;              //count number of living neighbours 
-    private boolean previousStatus, nextStatus; //next status: to temporarily save in rekenbord 
-
-    //toggle-variabele om array om en om te vullen
-    boolean colorBoolean = true;
+    private boolean previousStatus, nextStatus; //next status: to temporarily save in rekenbord    
+    boolean colorBoolean = true;                //toggle-variabele to fill a chessboard pattern
 
     //constructor
     public ChessboardData(int bg){
-        bordgrootte = bg;
-        schaakbord = new boolean [bordgrootte][bordgrootte];
-        rekenbord = new boolean [bordgrootte][bordgrootte];
+        squaresAlongSide = bg;
+        chessboard = new boolean [squaresAlongSide][squaresAlongSide];
+        calculationboard = new boolean [squaresAlongSide][squaresAlongSide];
 
-        for(int i = 0; i < bordgrootte; i++){
-            colorBoolean = (i%2 == 0);//begin regels om en om
-            for(int j = 0; j < bordgrootte; j++){
+        for(int i = 0; i < squaresAlongSide; i++){
+            colorBoolean = (i%2 == 0);          //start rows alternately true or false
+            for(int j = 0; j < squaresAlongSide; j++){
 
-                schaakbord[i][j] = colorBoolean;
+                chessboard[i][j] = colorBoolean;
                 colorBoolean = !colorBoolean;
             }
         }
     }
 
     /**
-     * inhoud van schaabord array tonen
+     * display content of chessboard array
+     * for debugging purposes
      */
-    public void printSchaakbord(){
-        System.out.println("Inhoud schaakbord-array \n");
+    public void printChessboard(){
+        System.out.println("Contents of chessboard-array \n");
 
-        for(int i = 0; i < bordgrootte; i++){
-            for(int j = 0; j < bordgrootte; j++){
-                System.out.print(schaakbord[i][j] + "\t");                
+        for(int i = 0; i < squaresAlongSide; i++){
+            for(int j = 0; j < squaresAlongSide; j++){
+                System.out.print(chessboard[i][j] + "\t");                
             }
-            System.out.println("");//nieuwe regel
+            System.out.println("");//new line
         }
     }
     /**
@@ -51,9 +50,9 @@ package gameoflife;
      */
     public void invertLives(){
 
-        for(int i = 0; i < bordgrootte; i++){            
-            for(int j = 0; j < bordgrootte; j++){
-                schaakbord[i][j] = !schaakbord[i][j];                
+        for(int i = 0; i < squaresAlongSide; i++){            
+            for(int j = 0; j < squaresAlongSide; j++){
+                chessboard[i][j] = !chessboard[i][j];                
             }
         }
     }
@@ -62,9 +61,9 @@ package gameoflife;
      * make all fields white
      */
     public void allCellsWhite(){
-        for(int i = 0; i < bordgrootte; i++){            
-            for(int j = 0; j < bordgrootte; j++){
-                schaakbord[i][j] = false;                
+        for(int i = 0; i < squaresAlongSide; i++){            
+            for(int j = 0; j < squaresAlongSide; j++){
+                chessboard[i][j] = false;                
             }
         }
     }
@@ -73,13 +72,13 @@ package gameoflife;
      * seed table with random noise
      */
     public void seedRandom(){
-        double treshold = 0.2;
+        double treshold = 0.15; //do play with this value! 
         
-        for(int i = 0; i < bordgrootte; i++){            
-            for(int j = 0; j < bordgrootte; j++){
+        for(int i = 0; i < squaresAlongSide; i++){            
+            for(int j = 0; j < squaresAlongSide; j++){
                 double randomDouble =  Math.random();
                 boolean randomBoolean = (randomDouble < treshold);
-                schaakbord[i][j] = randomBoolean;                
+                chessboard[i][j] = randomBoolean;                
             }
         }
 
@@ -90,7 +89,7 @@ package gameoflife;
      */
     public void toggleCell(int x, int y){
 
-        schaakbord[x][y] = !schaakbord[x][y];
+        chessboard[x][y] = !chessboard[x][y];
 
     }
 
@@ -117,33 +116,33 @@ package gameoflife;
     public void nextGeneration(){
         
         //fill rekenbord with new values
-        for(int i = 0; i < bordgrootte; i++){
-            for(int j = 0; j < bordgrootte; j++){
+        for(int i = 0; i < squaresAlongSide; i++){
+            for(int j = 0; j < squaresAlongSide; j++){
                 
-                if(i == 0){ iLess = bordgrootte - 1; }
+                if(i == 0){ iLess = squaresAlongSide - 1; }
                 else{ iLess = i-1; }
 
-                if(i == bordgrootte - 1){ iMore = 0; }
+                if(i == squaresAlongSide - 1){ iMore = 0; }
                 else{ iMore = i + 1; }
 
-                if(j == 0){ jLess = bordgrootte - 1; }
+                if(j == 0){ jLess = squaresAlongSide - 1; }
                 else{ jLess = j -1; }
 
-                if( j == bordgrootte - 1){ jMore = 0;}
+                if( j == squaresAlongSide - 1){ jMore = 0;}
                 else{ jMore = j + 1; } 
 
                 livingNeighbours = 0; //fresh start
-                previousStatus = schaakbord[i][j];
+                previousStatus = chessboard[i][j];
                 
                 //systematically visit all neighbours
-                if(schaakbord[iLess][jLess]) livingNeighbours +=1;
-                if(schaakbord[iLess][  j  ]) livingNeighbours +=1;
-                if(schaakbord[iLess][jMore]) livingNeighbours +=1;
-                if(schaakbord[  i  ][jLess]) livingNeighbours +=1;
-                if(schaakbord[  i  ][jMore]) livingNeighbours +=1;
-                if(schaakbord[iMore][jLess]) livingNeighbours +=1;
-                if(schaakbord[iMore][  j  ]) livingNeighbours +=1;
-                if(schaakbord[iMore][jMore]) livingNeighbours +=1;
+                if(chessboard[iLess][jLess]) livingNeighbours +=1;
+                if(chessboard[iLess][  j  ]) livingNeighbours +=1;
+                if(chessboard[iLess][jMore]) livingNeighbours +=1;
+                if(chessboard[  i  ][jLess]) livingNeighbours +=1;
+                if(chessboard[  i  ][jMore]) livingNeighbours +=1;
+                if(chessboard[iMore][jLess]) livingNeighbours +=1;
+                if(chessboard[iMore][  j  ]) livingNeighbours +=1;
+                if(chessboard[iMore][jMore]) livingNeighbours +=1;
 
                 //determine next status of our cell
                 if(livingNeighbours == 0){ nextStatus = false; }
@@ -153,15 +152,15 @@ package gameoflife;
                 if(livingNeighbours >= 4){ nextStatus = false; }
                 
                 //save in temporary array rekenbord
-                rekenbord[i][j] = nextStatus;               
+                calculationboard[i][j] = nextStatus;               
 
             }
         }
 
-        //write / copy rekenbord values into schaakbord array
-        for(int i = 0; i < bordgrootte; i++){
-            for(int j = 0; j < bordgrootte; j++){
-                schaakbord[i][j] = rekenbord[i][j];
+        //write / copy calculationboard values into chessboard array
+        for(int i = 0; i < squaresAlongSide; i++){
+            for(int j = 0; j < squaresAlongSide; j++){
+                chessboard[i][j] = calculationboard[i][j];
             }
         }
     } 
