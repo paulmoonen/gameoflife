@@ -1,2 +1,2 @@
-#do not upload compiled files
+#do not push compiled files
 *.class
