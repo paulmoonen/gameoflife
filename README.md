@@ -31,7 +31,7 @@ Some patterns will expand, or pulsate, or move around and stay active for many g
 Some patterns will eventually become stable.  
 
 The 30 x 30 grid works just like the road map of a doughnut:
-The top and bottom rows touch like neighbours, and the left and right columns behave in the same way.
+The top and bottom rows touch like neighbours, the left and right columns behave in the same way.
 When a pattern crawls away across one edge of the screen, 
 it simultaneously emerges on the exact opposite side.
 
