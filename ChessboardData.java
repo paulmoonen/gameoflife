@@ -12,8 +12,7 @@ package gameoflife;
     private int iLess, iMore, jLess, jMore;     //variables to get neighbour cell coordinates
     private byte livingNeighbours;              //count number of living neighbours 
     private boolean previousStatus, nextStatus; //next status: to temporarily save in rekenbord    
-    boolean colorBoolean = true;                //toggle-variabele to fill a chessboard pattern
-
+    
     //constructor
     public ChessboardData(int bg){
         squaresAlongSide = bg;
@@ -29,7 +28,7 @@ package gameoflife;
      */
     public void fillChessboardStyle(){
         for(int i = 0; i < squaresAlongSide; i++){
-            colorBoolean = (i%2 == 0);          //start rows alternately true or false
+            Boolean colorBoolean = (i%2 == 0);          //start rows alternately true or false
             for(int j = 0; j < squaresAlongSide; j++){
 
                 chessboard[i][j] = colorBoolean;
