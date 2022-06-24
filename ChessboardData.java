@@ -20,7 +20,7 @@ package gameoflife;
         chessboard = new boolean [squaresAlongSide][squaresAlongSide];
         calculationboard = new boolean [squaresAlongSide][squaresAlongSide];
 
-        //fillChessboardStyle();
+        //fill method on starting up
         allCellsWhite();
     }
 
@@ -169,6 +169,7 @@ package gameoflife;
         for(int i = 0; i < squaresAlongSide; i++){
             for(int j = 0; j < squaresAlongSide; j++){
                 chessboard[i][j] = calculationboard[i][j];
+                
             }
         }
     } 

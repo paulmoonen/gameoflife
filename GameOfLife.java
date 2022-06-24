@@ -51,7 +51,7 @@ public class GameOfLife {
             public void mouseReleased(MouseEvent e){ }
         });                  
         
-        myFrame.setSize(650, 700);
+        myFrame.setSize(600, 695);
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.setTitle("Game Of Life");
         myFrame.setContentPane( appview );
