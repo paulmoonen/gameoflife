@@ -4,16 +4,16 @@ import javax.swing.*;
 
 public class ChessboardView extends JPanel{
 
-    int stepX, stepY, bordgrootte;
-    int schermHoogte = 600;
-    int schermBreedte = 600;
-    private ChessboardData bordData; //beschik over de te tonen gegevens
-    boolean cellAlive; //temporarily hold value
+    int stepX, stepY, squaresAlongSide;
+    int boardHeight = 600;
+    int boardWidth = 600;
+    private ChessboardData boardData;    //reference to data to dispay
+    boolean cellAlive;                  //temporarily hold value
         
     //constructor
-    public ChessboardView(ChessboardData bd, int bg){
-        bordData = bd;          
-        bordgrootte = bg;                     
+    public ChessboardView(ChessboardData bd, int sas){
+        boardData = bd;          
+        squaresAlongSide = sas;                     
     }     
 
     /**
@@ -24,13 +24,13 @@ public class ChessboardView extends JPanel{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
 
-        stepX = schermBreedte / bordgrootte;
-        stepY = schermHoogte / bordgrootte;
+        stepX = boardWidth / squaresAlongSide;
+        stepY = boardHeight / squaresAlongSide;
         Color fillColor;
          
-        for( int row = 0; row < bordgrootte; row++){
-            for( int col = 0; col < bordgrootte; col++){
-                cellAlive = bordData.schaakbord[row][col];
+        for( int row = 0; row < squaresAlongSide; row++){
+            for( int col = 0; col < squaresAlongSide; col++){
+                cellAlive = boardData.chessboard[row][col];
                 fillColor = (cellAlive)? Color.BLACK : Color.WHITE;
                 g.setColor(fillColor);
                 
