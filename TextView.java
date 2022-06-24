@@ -3,7 +3,7 @@ import java.awt.Color;
 import javax.swing.*;
 
 public class TextView extends JPanel{
-    private String text = "Click a cell to toggle color. Make groups of colored cells to start the Game of Life.";
+    private String text = "Click to toggle the color of cells, then use the Next Generation button below.";
     private JLabel textLabel;
     
 
