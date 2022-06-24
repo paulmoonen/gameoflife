@@ -20,6 +20,14 @@ package gameoflife;
         chessboard = new boolean [squaresAlongSide][squaresAlongSide];
         calculationboard = new boolean [squaresAlongSide][squaresAlongSide];
 
+        //fillChessboardStyle();
+        allCellsWhite();
+    }
+
+    /**
+     * fill with chessboard style pattern
+     */
+    public void fillChessboardStyle(){
         for(int i = 0; i < squaresAlongSide; i++){
             colorBoolean = (i%2 == 0);          //start rows alternately true or false
             for(int j = 0; j < squaresAlongSide; j++){
