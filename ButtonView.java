@@ -7,7 +7,8 @@ public class ButtonView extends JPanel{
     private String invertColorTekst = "Invert colors";
     private String fillRandomTekst = "fill randomly";
     private String allCellsWhiteTekst = "all cells white";
-    private JButton invertColorButton, fillRandomButton, allWhiteButton;
+    private String nextGenerationTekst = "next generation";
+    private JButton invertColorButton, fillRandomButton, allWhiteButton, nextGeneratioButton;
     private SchaakbordData borddata;
     private SchaakbordView schaakbordview;
 
@@ -18,15 +19,18 @@ public class ButtonView extends JPanel{
         invertColorButton = new JButton(invertColorTekst);
         fillRandomButton = new JButton(fillRandomTekst);
         allWhiteButton = new JButton(allCellsWhiteTekst);
+        nextGeneratioButton = new JButton(nextGenerationTekst);
 
         add(invertColorButton);
         add(fillRandomButton);
         add(allWhiteButton);
+        add(nextGeneratioButton);
 
         ActionListener eventhandler = new EventHandler();
         invertColorButton.addActionListener(eventhandler);
         fillRandomButton.addActionListener(eventhandler);
         allWhiteButton.addActionListener(eventhandler);
+        nextGeneratioButton.addActionListener(eventhandler);
         
     }
 
@@ -46,7 +50,11 @@ public class ButtonView extends JPanel{
             if(e.getSource() == allWhiteButton){
                 borddata.allCellsWhite();
             }
-            
+
+            if(e.getSource() == nextGeneratioButton){
+                borddata.nextGeneration();
+            }
+                        
             schaakbordview.repaint();
         }
     }   
