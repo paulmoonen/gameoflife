@@ -7,10 +7,10 @@ import javax.swing.*;
  * control buttons, with event listener to call appropriate functions
  */
 public class ButtonsView extends JPanel{
-    private String invertColorText          = "Invert lives";
-    private String fillRandomText           = "Random live cells";
+    private String invertColorText          = "Invert";
+    private String fillRandomText           = "Random";
     private String allCellsWhiteText        = "Clear";
-    private String nextGenerationText       = "Next generation";
+    private String nextGenerationText       = "Next";
     private String chessboardButtonString   = "Chessboard";
         
     private JButton invertColorButton; 
