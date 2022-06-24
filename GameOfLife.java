@@ -2,7 +2,7 @@ package gameoflife;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Chessboard {
+public class GameOfLife {
     public static void main(String args[]){
 
         final int squaresAlongSide = 30; //this chessboard is 30 X 30 squares
@@ -11,8 +11,10 @@ public class Chessboard {
         JFrame myFrame = new JFrame();
         ChessboardData boardData = new ChessboardData(squaresAlongSide);
         ChessboardView chessboardview = new ChessboardView( boardData, squaresAlongSide );
-        ButtonsView btnvw = new ButtonsView(boardData, chessboardview);
+        
         TextView tvw = new TextView();
+        
+        ButtonsView btnvw = new ButtonsView(boardData, chessboardview);
         ApplicationView appview = new ApplicationView(tvw, chessboardview, btnvw);
 
         chessboardview.addMouseListener(new MouseListener(){
@@ -55,7 +57,7 @@ public class Chessboard {
         myFrame.setContentPane( appview );
         myFrame.setVisible(true);            
         
-        chessboardview.repaint();           
-        
+        chessboardview.repaint();  
+               
     }    
 }
