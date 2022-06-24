@@ -20,7 +20,7 @@ Click on the 'Next Generation' button to see what will happen to any pattern.
 
 Buttons:
 
-Next Generation:    show the next generation, a new pattern that descends from the current pattern
+Next Generation:    show the next generation, a new pattern that descends from the current one
 Clear:              make all cells 'dead'
 Invert:             make all 'dead' cells 'alive', and all 'alive' cells 'dead'
 Chessboard:         show the grid, with an alternating pattern of 'alive' and 'dead' cells
