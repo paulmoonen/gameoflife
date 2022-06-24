@@ -8,10 +8,10 @@ import javax.swing.*;
 public class ApplicationView extends JPanel {
 
     private TextView tv;
-    private SchaakbordView sbv;
+    private ChessboardView sbv;
     private ButtonsView btnvw;
 
-    public ApplicationView(TextView tv, SchaakbordView sbv, ButtonsView btnvw){
+    public ApplicationView(TextView tv, ChessboardView sbv, ButtonsView btnvw){
                                 
         setLayout(new BorderLayout());
         add(tv, BorderLayout.NORTH);

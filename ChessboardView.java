@@ -2,7 +2,7 @@ package gameoflife;
 import java.awt.*;
 import javax.swing.*;
 
-public class SchaakbordView extends JPanel{
+public class ChessboardView extends JPanel{
 
     int stepX, stepY, bordgrootte;
     int schermHoogte = 600;
@@ -11,7 +11,7 @@ public class SchaakbordView extends JPanel{
     boolean cellAlive; //temporarily hold value
         
     //constructor
-    public SchaakbordView(ChessboardData bd, int bg){
+    public ChessboardView(ChessboardData bd, int bg){
         bordData = bd;          
         bordgrootte = bg;                     
     }     

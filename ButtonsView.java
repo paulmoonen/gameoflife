@@ -10,9 +10,9 @@ public class ButtonsView extends JPanel{
     private String nextGenerationTekst = "next generation";
     private JButton invertColorButton, fillRandomButton, allWhiteButton, nextGeneratioButton;
     private ChessboardData borddata;
-    private SchaakbordView schaakbordview;
+    private ChessboardView schaakbordview;
 
-    public ButtonsView(ChessboardData borddata, SchaakbordView schaakbordview){
+    public ButtonsView(ChessboardData borddata, ChessboardView schaakbordview){
         this.borddata = borddata;
         this.schaakbordview = schaakbordview;
         setBackground(Color.YELLOW);
