@@ -12,7 +12,8 @@ This is the first generation of 'alive' cells.
 
 ( if you are lazy, just hit the 'Random' button to seed a nice random pattern )
 
-A simple set of rules, using the statuses of the neighbouring cells, determines whether a specific cell will come alive, will stay alive or will die, in the next generation. 
+A simple set of rules, using the statuses of the neighbouring cells, 
+determines whether a specific cell will come alive, will stay alive or will die, in the next generation. 
 
 Click on the 'Next Generation' button to see what will happen to any pattern.
 
