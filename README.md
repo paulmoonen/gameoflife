@@ -1,5 +1,5 @@
 # Game of Life
-
+<pre>
 A traditional math pastime.
 Simple rules can produce amazing patterns in time and pace...
 
@@ -23,6 +23,7 @@ Chessboard:         show the grid by making an alternating chessboard like patte
 Random:             fill with a random pattern of 'alive' and 'dead' cells
 
 This program is made with Java version openjdk 11.0.15
+</pre>
 
 
 
