@@ -1,4 +1,4 @@
-package schaakbord;
+package gameoflife;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -11,7 +11,7 @@ public class Schaakbord {
         JFrame myFrame = new JFrame();
         SchaakbordData bordData = new SchaakbordData(squaresAlongSide);
         SchaakbordView schaakbordview = new SchaakbordView( bordData, squaresAlongSide );
-        ButtonView btnvw = new ButtonView(bordData, schaakbordview);
+        ButtonsView btnvw = new ButtonsView(bordData, schaakbordview);
         TextView tvw = new TextView();
         ApplicationView appview = new ApplicationView(tvw, schaakbordview, btnvw);
 
@@ -23,8 +23,7 @@ public class Schaakbord {
 
                 if (x > 600){x = 600;}
                 if (y > 600){y = 600;}
-                System.out.println("klik, x: " + x + " y: " + y);
-
+                
                 /*
                  * find out which cell has been clicked
                  * chessboard = 600 X 600 pixels wide
@@ -38,26 +37,16 @@ public class Schaakbord {
             }
 
             @Override
-            public void mouseExited(MouseEvent e){
-                //System.out.println("mouse exited");
-            }
+            public void mouseExited(MouseEvent e){ }
 
             @Override
-            public void mouseEntered(MouseEvent e){
-                // int x = e.getX();
-                // int y = e.getY();
-                // System.out.println("mouse entered, location ( "+ x + " , " + y + ")");
-            }
+            public void mouseEntered(MouseEvent e){ }
 
             @Override
-            public void mousePressed(MouseEvent e){
-                //System.out.println("mouse pressed");
-            }
+            public void mousePressed(MouseEvent e){ }
 
             @Override
-            public void mouseReleased(MouseEvent e){
-                //System.out.println("mouse released");
-            }
+            public void mouseReleased(MouseEvent e){ }
         });                  
         
         myFrame.setSize(650, 700);

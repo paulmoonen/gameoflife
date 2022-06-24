@@ -1,4 +1,4 @@
-package schaakbord;
+package gameoflife;
 
 /*
  * klasse om de gegevens van het schaakbord op te slaan en bij te werken

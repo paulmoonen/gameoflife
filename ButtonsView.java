@@ -1,9 +1,9 @@
-package schaakbord;
+package gameoflife;
 import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class ButtonView extends JPanel{
+public class ButtonsView extends JPanel{
     private String invertColorTekst = "Invert colors";
     private String fillRandomTekst = "fill randomly";
     private String allCellsWhiteTekst = "all cells white";
@@ -12,7 +12,7 @@ public class ButtonView extends JPanel{
     private SchaakbordData borddata;
     private SchaakbordView schaakbordview;
 
-    public ButtonView(SchaakbordData borddata, SchaakbordView schaakbordview){
+    public ButtonsView(SchaakbordData borddata, SchaakbordView schaakbordview){
         this.borddata = borddata;
         this.schaakbordview = schaakbordview;
         setBackground(Color.YELLOW);
@@ -54,7 +54,7 @@ public class ButtonView extends JPanel{
             if(e.getSource() == nextGeneratioButton){
                 borddata.nextGeneration();
             }
-                        
+
             schaakbordview.repaint();
         }
     }   

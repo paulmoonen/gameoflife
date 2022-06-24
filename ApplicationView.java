@@ -1,4 +1,4 @@
-package schaakbord;
+package gameoflife;
 import java.awt.*;
 import javax.swing.*;
 
@@ -9,9 +9,9 @@ public class ApplicationView extends JPanel {
 
     private TextView tv;
     private SchaakbordView sbv;
-    private ButtonView btnvw;
+    private ButtonsView btnvw;
 
-    public ApplicationView(TextView tv, SchaakbordView sbv, ButtonView btnvw){
+    public ApplicationView(TextView tv, SchaakbordView sbv, ButtonsView btnvw){
                                 
         setLayout(new BorderLayout());
         add(tv, BorderLayout.NORTH);
