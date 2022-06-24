@@ -35,12 +35,7 @@ The top and bottom rows touch like neighbours, the left and right columns behave
 When a pattern crawls away across one edge of the screen, 
 it simultaneously emerges on the exact opposite side.
 
-In your IDE, run this program like you normally would.
-
-
-
 This program is made with Java version openjdk 11.0.15
-
  
 </pre>
 
