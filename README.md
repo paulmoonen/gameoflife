@@ -8,6 +8,7 @@ This program opens up a window with an empty, clickable area, and several button
 The cells ( in a 30 x 30 grid ) can be either 'alive' (black) or 'dead' (white).
 Click a spot in the clickable area, to toggle the status of the cell right there, 
 and go on like this to make all kinds of patterns and clusters of 'alive' cells.
+( lumpiness is good! )
 This is the first generation of 'alive' cells.
 
 ( if you are lazy, just hit the 'Random' button to seed a nice random pattern )
