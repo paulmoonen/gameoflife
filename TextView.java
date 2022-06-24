@@ -1,15 +1,15 @@
-package schaakbord;
+package gameoflife;
 import java.awt.Color;
 import javax.swing.*;
 
 public class TextView extends JPanel{
-    private String tekst = "Tekst van TextField";
-    private JTextArea tekstveld;
+    private String text = "Click a cell to toggle color";
+    private JTextArea textfield;
 
     public TextView(){
         setBackground(Color.BLUE);
-        tekstveld = new JTextArea(tekst);
-        add(tekstveld);
+        textfield = new JTextArea(text);
+        add(textfield);
     }
     
 }

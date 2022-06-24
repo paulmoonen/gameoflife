@@ -1,4 +1,4 @@
-package schaakbord;
+package gameoflife;
 import java.awt.*;
 import javax.swing.*;
 
@@ -34,7 +34,7 @@ public class SchaakbordView extends JPanel{
                 fillColor = (cellAlive)? Color.BLACK : Color.WHITE;
                 g.setColor(fillColor);
                 
-                g.fillRect((int)(row * stepX), (int)(col * stepY), stepX, stepY);
+                g.fillRect((row * stepX), (col * stepY), stepX, stepY);
             }
         }
     }  
