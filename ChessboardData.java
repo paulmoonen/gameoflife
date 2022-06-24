@@ -4,7 +4,7 @@ package gameoflife;
  * klasse om de gegevens van het schaakbord op te slaan en bij te werken
  */
 
- class SchaakbordData{
+ class ChessboardData{
     
     private int bordgrootte;                    //number of squares along either side of chessboard
     public boolean [][] schaakbord;             //lijst van cellen, tweedimensionale boolean array 
@@ -17,7 +17,7 @@ package gameoflife;
     boolean colorBoolean = true;
 
     //constructor
-    public SchaakbordData(int bg){
+    public ChessboardData(int bg){
         bordgrootte = bg;
         schaakbord = new boolean [bordgrootte][bordgrootte];
         rekenbord = new boolean [bordgrootte][bordgrootte];

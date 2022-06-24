@@ -7,11 +7,11 @@ public class SchaakbordView extends JPanel{
     int stepX, stepY, bordgrootte;
     int schermHoogte = 600;
     int schermBreedte = 600;
-    private SchaakbordData bordData; //beschik over de te tonen gegevens
+    private ChessboardData bordData; //beschik over de te tonen gegevens
     boolean cellAlive; //temporarily hold value
         
     //constructor
-    public SchaakbordView(SchaakbordData bd, int bg){
+    public SchaakbordView(ChessboardData bd, int bg){
         bordData = bd;          
         bordgrootte = bg;                     
     }     
