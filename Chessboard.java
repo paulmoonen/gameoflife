@@ -2,14 +2,14 @@ package gameoflife;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Schaakbord {
+public class Chessboard {
     public static void main(String args[]){
 
         final int squaresAlongSide = 30; //this chessboard is 30 X 30 squares
 
         //maak een omvattend JFrame
         JFrame myFrame = new JFrame();
-        SchaakbordData bordData = new SchaakbordData(squaresAlongSide);
+        ChessboardData bordData = new ChessboardData(squaresAlongSide);
         SchaakbordView schaakbordview = new SchaakbordView( bordData, squaresAlongSide );
         ButtonsView btnvw = new ButtonsView(bordData, schaakbordview);
         TextView tvw = new TextView();
