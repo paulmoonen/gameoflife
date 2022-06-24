@@ -10,7 +10,7 @@ public class Chessboard {
         //maak een omvattend JFrame
         JFrame myFrame = new JFrame();
         ChessboardData bordData = new ChessboardData(squaresAlongSide);
-        SchaakbordView schaakbordview = new SchaakbordView( bordData, squaresAlongSide );
+        ChessboardView schaakbordview = new ChessboardView( bordData, squaresAlongSide );
         ButtonsView btnvw = new ButtonsView(bordData, schaakbordview);
         TextView tvw = new TextView();
         ApplicationView appview = new ApplicationView(tvw, schaakbordview, btnvw);
