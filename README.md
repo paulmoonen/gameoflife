@@ -10,11 +10,11 @@ Click a spot in the clickable area, to toggle the status of the cell right there
 and to make all kinds of patterns and clusters of 'alive' cells.
 This is the first generation of 'alive' cells.
 
-A simple set of rules, using the statuses of the neighbouring cells, determines whether a specific cell will come alive, will stay alive, or will die, in the next generation. 
+A simple set of rules, using the statuses of the neighbouring cells, determines whether a specific cell will come alive, will stay alive or will die, in the next generation. 
 
-Slick on the Next Generation button to see what will happen to the pattern.
+Click on the 'Next Generation' button to see what will happen to the pattern.
 
-buttons:
+Buttons:
 
 Next Generation:    show the next generation, which descends from the current pattern
 Clear:              all cells 'dead'
@@ -22,6 +22,7 @@ Invert:             make all 'dead' cells 'alive', and all 'alive' cells 'dead'
 Chessboard:         show the grid by making an alternating chessboard like pattern of 'alive' cells
 Random:             fill with a random pattern of 'alive' and 'dead' cells
 
+This program is made with Java version openjdk 11.0.15
 
 
 
