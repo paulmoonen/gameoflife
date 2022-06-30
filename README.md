@@ -21,13 +21,13 @@ Click on the 'Next Generation' button to see what will happen to any pattern.
 
 Buttons:
 
-Next Generation:    show the next generation, a new pattern that descends from the current one
-Clear:              make all cells 'dead'
-Invert:             make all 'dead' cells 'alive', and all 'alive' cells 'dead'
-Chessboard:         show the grid, with an alternating pattern of 'alive' and 'dead' cells
 Random:             fill with a random pattern of 'alive' and 'dead' cells
+Invert:             make all 'dead' cells 'alive', and all 'alive' cells 'dead'
+Clear:              make all cells 'dead'
+Next Generation:    show the next generation, a new pattern that descends from the current one
+Run / Pause:        start or interrupt the flow of new patterns
 
-Some patterns die away quickly, like the chessboard pattern does.
+Some patterns die away quickly.
 Some patterns will expand, or pulsate, or move around and stay active for many generations.
 Some patterns will eventually become stable.  
 
@@ -36,8 +36,7 @@ The top and bottom rows touch like neighbours, the left and right columns behave
 When a pattern crawls away across one edge of the screen, it simultaneously emerges 
 on the exact opposite side.
 
-This program is made with Java version openjdk 11.0.15
- 
+This program is made with Java version openjdk 11.0.15 
 </pre>
 
 
