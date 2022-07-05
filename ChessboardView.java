@@ -1,6 +1,5 @@
 package gameoflife;
-import java.awt.*;
-import javax.swing.plaf.ColorUIResource; //RGB color
+import java.awt.*; //includes color and Graphics
 import javax.swing.*;
 
 public class ChessboardView extends JPanel{
@@ -8,8 +7,8 @@ public class ChessboardView extends JPanel{
     int stepX, stepY, squaresAlongSide;
     int boardHeight = 600;
     int boardWidth = 600;
-    ColorUIResource deadCellColor = new ColorUIResource(180,180,180); //lightgrey
-    ColorUIResource liveCellColor = new ColorUIResource(20,20,20) ; //darkgrey
+    Color deadCellColor = new Color(180,180,180); //lightgrey
+    Color liveCellColor = new Color(20,20,20) ; //darkgrey
     private ChessboardData boardData;    //reference to data to dispay
     boolean cellAlive;                  //temporarily hold value
         
