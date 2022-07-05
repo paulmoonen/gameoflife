@@ -2,6 +2,10 @@ package gameoflife;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ * Startup class of the 'gameoflife' application.
+ * initiates various view and data objects and puts them together
+ */
 public class GameOfLife {
     public static void main(String args[]){
 

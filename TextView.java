@@ -2,6 +2,9 @@ package gameoflife;
 import java.awt.Color;
 import javax.swing.*;
 
+/**
+ * insruction message in top section of application
+ */
 public class TextView extends JPanel{
     private String text = "Click to toggle the color of cells, then click 'Run / Pause' button below.";
     private JLabel textLabel;

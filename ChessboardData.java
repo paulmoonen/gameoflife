@@ -36,21 +36,7 @@ package gameoflife;
             }
         }
     }
-
-    /**
-     * display content of chessboard array
-     * for debugging purposes
-     */
-    public void printChessboard(){
-        System.out.println("Contents of chessboard-array \n");
-
-        for(int i = 0; i < squaresAlongSide; i++){
-            for(int j = 0; j < squaresAlongSide; j++){
-                System.out.print(chessboard[i][j] + "\t");                
-            }
-            System.out.println("");//new line
-        }
-    }
+    
     /**
      * invert the colors of the squares
      * or the 'lives of the cells'
