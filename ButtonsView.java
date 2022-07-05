@@ -83,6 +83,7 @@ public class ButtonsView extends JPanel{
             }
 
             if(e.getSource() == allWhiteButton){
+                paused = true;  //to enable drawing a new pattern manually
                 boarddata.allCellsWhite();
             }
 

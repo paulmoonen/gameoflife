@@ -5,7 +5,7 @@ Simple rules can produce amazing patterns in time and space...
 
 This program opens up a window with an empty, clickable area, and several buttons below.
 
-The cells ( in a 30 x 30 grid ) can be either 'alive' (black) or 'dead' (white).
+The cells ( in a 30 x 30 grid ) can be either 'alive' (dark grey) or 'dead' (light grey).
 Click a spot in the clickable area, to toggle the status of the cell right there, 
 and go on like this to make all kinds of patterns and clusters of 'alive' cells.
 ( lumpiness is good! )
