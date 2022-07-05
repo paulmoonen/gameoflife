@@ -1,7 +1,10 @@
 package gameoflife;
-import java.awt.*; //includes color and Graphics
+import java.awt.*; //color and Graphics
 import javax.swing.*;
 
+/**
+ * class to display the cell-data
+ */
 public class ChessboardView extends JPanel{
 
     int stepX, stepY, squaresAlongSide;
