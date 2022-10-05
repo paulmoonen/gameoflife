@@ -13,13 +13,13 @@ public class GameOfLife {
 
         //a JFrame to diaplay everything on screen
         JFrame myFrame = new JFrame();
-        ChessboardData boardData = new ChessboardData(squaresAlongSide);
-        ChessboardView chessboardview = new ChessboardView( boardData, squaresAlongSide );
+        var boardData = new ChessboardData(squaresAlongSide);
+        var chessboardview = new ChessboardView( boardData, squaresAlongSide );
         
-        TextView tvw = new TextView();
+        var tvw = new TextView();
         
-        ButtonsView btnvw = new ButtonsView(boardData, chessboardview);
-        ApplicationView appview = new ApplicationView(tvw, chessboardview, btnvw);
+        var btnvw = new ButtonsView(boardData, chessboardview);
+        var appview = new ApplicationView(tvw, chessboardview, btnvw);
 
         chessboardview.addMouseListener(new MouseListener(){
             @Override
